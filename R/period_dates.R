@@ -95,8 +95,7 @@ FY <- function(date = Sys.Date(),
 #' period_boundaries(offset_period = 14, offset_type = "month",
 #'                   bus_period = "M", boundary = "last day")
 #'
-#' # the first day of finacial year for dates month 3 months
-#' # before the given dates
+#' # The first day of finacial years for dates 3 months before the given dates
 #' period_boundaries(as.Date(c("02/27/1992", "09/28/2022"), "%m/%d/%Y"),
 #'                   offset_period = -3, offset_type = "month",
 #'                   bus_period = "FY", boundary = "1st day")

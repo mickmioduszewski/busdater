@@ -4,7 +4,7 @@
 \name{busdater-package}
 \alias{busdater}
 \alias{busdater-package}
-\title{busdater: Standard date calculations for business}
+\title{busdater: Standard Date Calculations for Business}
 \description{
 Get a current financial year, start of current month, 
     End of current month, start of financial year and end of it.

@@ -1,6 +1,6 @@
 Package: busdater
 Type: Package
-Title: Standard date calculations for business
+Title: Standard Date Calculations for Business
 Version: 0.1.0
 Authors@R: person("Mick", "Mioduszewski", email = "mick@mioduszewski.net",
                   role = c("aut", "cre"))
@@ -18,3 +18,5 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
+Author: Mick Mioduszewski [aut, cre]
+Maintainer: Mick Mioduszewski <mick@mioduszewski.net>
