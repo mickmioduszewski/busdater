@@ -31,12 +31,6 @@ test_that("FY is correct", {
 })
 
 test_that("offset_type is correct", {
-  # expect_warning(period_boundaries(offset_period = c(1,2)),
-  #                paste("package busdater:",
-  #                      "offset_period must be an integer vector"))
-  # expect_error(period_boundaries(offset_period = c("a")),
-  #              paste("package busdater:",
-  #                    "offset_period must be an integer vector"))
   expect_warning(period_boundaries(offset_type = c("month", "year")),
                  paste("package busdater:",
                        "offset_type should be a character vector of length 1,",
@@ -66,7 +60,7 @@ test_that("boundary is correct", {
                      "boundary must be '1st day' or 'last day'"))
 })
 
-test_that("offset operations is correct", {
+test_that("offset operation is correct", {
   dtb <- ymd("2020-01-01", "2020-02-15", "2020-02-27", "2020-02-28",
              "2020-02-29", "2020-06-30", "2020-07-01", "2020-12-31")
   expect_equal(offset_dt(date = dtb,

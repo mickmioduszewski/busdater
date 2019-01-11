@@ -187,7 +187,7 @@ check_param_offset_type <- function(offset_type) {
                   "offset_type should be a character vector of length 1,",
                   "using the first element"))
   }
-  if (!(offset_type %in% c("month", "year"))) {
+  if (!(offset_type[1] %in% c("month", "year"))) {
     stop(paste("package busdater:",
                "offset_type must be 'month' or 'year'"))
   }
@@ -199,7 +199,7 @@ check_param_bus_period <- function(bus_period) {
                   "bus_period should be a character vector of length 1,",
                   "using the first element"))
   }
-  if (!(bus_period %in% c('FY', 'CY', 'M'))) {
+  if (!(bus_period[1] %in% c('FY', 'CY', 'M'))) {
     stop(paste("package busdater:",
                "bus_period must be 'FY' or 'CY' or 'M'"))
   }
@@ -211,7 +211,7 @@ check_param_boundary <- function(boundary) {
                   "boundary should be a character vector of length 1,",
                   "using the first element"))
   }
-  if (!(boundary %in% c('1st day', 'last day'))) {
+  if (!(boundary[1] %in% c('1st day', 'last day'))) {
     stop(paste("package busdater:",
                "boundary must be '1st day' or 'last day'"))
   }
