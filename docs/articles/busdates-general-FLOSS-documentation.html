@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business dates calculations • busdater</title>
+<title>About this software • busdater</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Business dates calculations">
+<script src="../pkgdown.js"></script><meta property="og:title" content="About this software">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -53,7 +53,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/busdates-general-FLOSS-documentation.html">Business dates calculations</a>
+      <a href="../articles/busdates-general-FLOSS-documentation.html">About this software</a>
     </li>
     <li>
       <a href="../articles/busdates-introduction-vignette.html">Business dates calculations</a>
@@ -76,7 +76,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Business dates calculations</h1>
+      <h1>About this software</h1>
                         <h4 class="author">Mick Mioduszewski</h4>
             
             <h4 class="date">2019-01-19</h4>
@@ -89,101 +89,9 @@
     
     
 <p>This software is FLOSS and attempts to conform with Core Infrastructure Integration</p>
-<div id="introduction-to-busdater" class="section level2">
-<h2 class="hasAnchor">
-<a href="#introduction-to-busdater" class="anchor"></a>Introduction to busdater</h2>
-<p>Working with business dates can be cumbersome and error prone. <code>busdater</code> aims to make it easier, by providing functionality, to get financial year, calendar year and month calculations. It returns start and end of the business periods.</p>
-<p>Jurisdictions and organisations observe different start and end of financial year. <code>optFYstart</code> parameter is string in the format of “MM-DD” representing the start of financial year, e.g. “01-01” for 1st of January or “07-01” for 1st of July. The default is taken from options and is “07-01” if not present.</p>
-<p>This package caters for financial years that have a fixed start date. It does not cater for moving dates e.g. last Friday of September.</p>
-<p>The package has 2 functions:</p>
-<ul>
-<li>
-<code>FY</code> to return the financial (fiscal) year as integers</li>
-<li>
-<code>period_boundaries</code> to return start and end of a month and start and end of financial years</li>
-</ul>
-<p>Enjoy!</p>
-</div>
-<div id="examples-and-explanations" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples-and-explanations" class="anchor"></a>Examples and explanations</h2>
-</div>
-<div id="fy-function" class="section level2">
-<h2 class="hasAnchor">
-<a href="#fy-function" class="anchor"></a><code>FY</code> function</h2>
-<p>Given the current date:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.time">Sys.Date</a></span>()</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">#&gt; [1] "2019-01-19"</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"busdaterFYstart"</span>, <span class="dt">default =</span> <span class="st">"07-01"</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt; [1] "07-01"</span></a></code></pre></div>
-<p>Return the current financial year as integer</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="../reference/FY.html">FY</a></span>()</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; [1] 2019</span></a></code></pre></div>
-<p>Return financial year for given dates</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">dt &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"01-01-2018"</span>, <span class="st">"15-12-2017"</span>), <span class="st">"%d-%m-%Y"</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; [1] 2018</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt)</a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; [1] 2018 2018</span></a></code></pre></div>
-<p>Return the next financial year as integer</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">offset_period =</span> <span class="dv">1</span>) <span class="co"># current financial year + 1</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; [1] 2020</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt[<span class="dv">1</span>], <span class="dt">offset_period =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt; [1] 2019</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt, <span class="dt">offset_period =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; [1] 2019 2019</span></a></code></pre></div>
-<p>Return the previous financial year as integer</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">offset_period=</span><span class="op">-</span><span class="dv">1</span>) <span class="co">## return the previous financial year as integer</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; [1] 2018</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt[<span class="dv">1</span>], <span class="dt">offset_period =</span> <span class="dv">-1</span>)</a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; [1] 2017</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="kw"><a href="../reference/FY.html">FY</a></span>(<span class="dt">date =</span> dt, <span class="dt">offset_period =</span> <span class="dv">-1</span>)</a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; [1] 2017 2017</span></a></code></pre></div>
-</div>
-<div id="period_boundaries-function" class="section level2">
-<h2 class="hasAnchor">
-<a href="#period_boundaries-function" class="anchor"></a><code>period_boundaries</code> function</h2>
-<p>Given the current date:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.time">Sys.Date</a></span>()</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co">#&gt; [1] "2019-01-19"</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"busdaterFYstart"</span>, <span class="dt">default =</span> <span class="st">"07-01"</span>)</a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="co">#&gt; [1] "07-01"</span></a></code></pre></div>
-<p>What is the 1st day of the current financial year</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>()</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co">#&gt; [1] "2018-07-01"</span></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="dt">opt_fy_start =</span> <span class="st">"07-01"</span>)</a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">#&gt; [1] "2018-07-01"</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="dt">opt_fy_start =</span> <span class="st">"01-03"</span>)</a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="co">#&gt; [1] "2019-01-03"</span></a></code></pre></div>
-<p>The last day of the current financial year</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="dt">boundary =</span> <span class="st">"last day"</span>)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; [1] "2019-06-30"</span></a></code></pre></div>
-<p>The last day of the last calendar year</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="dt">offset_period =</span> <span class="dv">-1</span>, <span class="dt">bus_period =</span> <span class="st">"CY"</span>, <span class="dt">boundary =</span> <span class="st">"last day"</span>)</a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="co">#&gt; [1] "2018-12-31"</span></a></code></pre></div>
-<p>The last day of month 14 months from now</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="dt">offset_period =</span> <span class="dv">14</span>, <span class="dt">offset_type =</span> <span class="st">"month"</span>,</a>
-<a class="sourceLine" id="cb10-2" title="2">                  <span class="dt">bus_period =</span> <span class="st">"M"</span>, <span class="dt">boundary =</span> <span class="st">"last day"</span>)</a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="co">#&gt; [1] "2020-03-31"</span></a></code></pre></div>
-<p>The first day of financial years for dates 3 months before the given dates</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw"><a href="../reference/period_boundaries.html">period_boundaries</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"02/27/1992"</span>, <span class="st">"09/28/2022"</span>), <span class="st">"%m/%d/%Y"</span>),</a>
-<a class="sourceLine" id="cb11-2" title="2">                  <span class="dt">offset_period =</span> <span class="dv">-3</span>, <span class="dt">offset_type =</span> <span class="st">"month"</span>,</a>
-<a class="sourceLine" id="cb11-3" title="3">                  <span class="dt">bus_period =</span> <span class="st">"FY"</span>, <span class="dt">boundary =</span> <span class="st">"1st day"</span>)</a>
-<a class="sourceLine" id="cb11-4" title="4"><span class="co">#&gt; [1] "1991-07-01" "2021-07-01"</span></a></code></pre></div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction-to-busdater">Introduction to busdater</a></li>
-      <li><a href="#examples-and-explanations">Examples and explanations</a></li>
-      <li><a href="#fy-function"><code>FY</code> function</a></li>
-      <li><a href="#period_boundaries-function"><code>period_boundaries</code> function</a></li>
-      </ul>
-</div>
       </div>
 
 </div>
