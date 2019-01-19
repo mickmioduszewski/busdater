@@ -1,7 +1,7 @@
 Package: busdater
 Type: Package
 Title: Standard Date Calculations for Business
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Mick", "Mioduszewski", email = "mick@mioduszewski.net",
                   role = c("aut", "cre"))
 Description: Get a current financial year, start of current month, 
