@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get date's business period boundary (deprecated). — period_boundaries • busdater</title>
+<title>Get a financial year. — get_fy • busdater</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,11 +30,11 @@
 
 
 
-<meta property="og:title" content="Get date's business period boundary (deprecated). — period_boundaries" />
+<meta property="og:title" content="Get a financial year. — get_fy" />
 
-<meta property="og:description" content="The period_boundaries will shift the input date vector by
-a number of months and years i.e. date + offset_period * offset_type.
-It will handle the typical business date arithmetic." />
+<meta property="og:description" content="get_fy() returns the current financial (fiscal) year.
+It also returns financial year based on parameter dates, or financial year
+based on a parameter dates and offset_period in years." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -119,22 +119,21 @@ It will handle the typical business date arithmetic." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get date's business period boundary (deprecated).</h1>
+    <h1>Get a financial year.</h1>
     <small class="dont-index">Source: <a href='https://github.com/mickmioduszewski/busdater/blob/master/R/period_dates.R'><code>R/period_dates.R</code></a></small>
-    <div class="hidden name"><code>period_boundaries.Rd</code></div>
+    <div class="hidden name"><code>get_fy.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The <code>period_boundaries</code> will shift the input <code>date</code> vector by
-a number of months and years i.e. <code>date + offset_period * offset_type</code>.
-It will handle the typical business date arithmetic.</p>
+    <p><code>get_fy()</code> returns the current financial (fiscal) year.
+It also returns financial year based on parameter dates, or financial year
+based on a parameter dates and offset_period in years.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>period_boundaries</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.time'>Sys.Date</a></span>(), <span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>offset_type</span> <span class='kw'>=</span> <span class='st'>"year"</span>, <span class='kw'>bus_period</span> <span class='kw'>=</span> <span class='st'>"FY"</span>, <span class='kw'>boundary</span> <span class='kw'>=</span> <span class='st'>"1st day"</span>,
-  <span class='kw'>optFYstart</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"busdaterFYstart"</span>, <span class='kw'>default</span> <span class='kw'>=</span> <span class='st'>"07-01"</span>))</pre>
+    <pre class="usage"><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.time'>Sys.Date</a></span>(), <span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>opt_fy_start</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"busdaterFYstart"</span>, <span class='kw'>default</span> <span class='kw'>=</span> <span class='st'>"07-01"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,26 +147,12 @@ Date must be POSIXct or POSIXlt or Date objects.</p></td>
       <th>offset_period</th>
       <td><p>A positive or negative number  coercible to
 integer to shift the year by,
-e.g. in the case of <code>FY</code>, -1 for previous year, 1 for next year. More
+e.g. in the case of <code>get_fy</code>, -1 for previous year, 1 for next year. More
 generally in <code>page_boundaries</code> function it is a number of periods of
 a specified period type</p></td>
     </tr>
     <tr>
-      <th>offset_type</th>
-      <td><p>It is either <code>"month"</code> or <code>"year"</code></p></td>
-    </tr>
-    <tr>
-      <th>bus_period</th>
-      <td><p>It is either <code>"FY"</code> for financial year,
-<code>"CE"</code> for calendar year or <code>"M"</code> for month</p></td>
-    </tr>
-    <tr>
-      <th>boundary</th>
-      <td><p>Either <code>"1st day"</code> for the first day of the period or
-<code>"last day"</code> for the end of the period.</p></td>
-    </tr>
-    <tr>
-      <th>optFYstart</th>
+      <th>opt_fy_start</th>
       <td><p>A string in the format of "MM-DD" representing the start
 of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
 This package caters for financial years that have a fixed start date.
@@ -177,29 +162,27 @@ It does not cater for moving dates e.g. last Friday of September.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of dates.</p>
+    <p>An integer vector containing the current financial year if offset
+<code>offset_period</code> is 0, otherwise add the offset <code>offset_period</code>
+in years.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other business date functions: <code><a href='FY.html'>FY</a></code>,
-  <code><a href='get_boundary.html'>get_boundary</a></code>, <code><a href='get_fy.html'>get_fy</a></code></p></div>
+  <code><a href='get_boundary.html'>get_boundary</a></code>,
+  <code><a href='period_boundaries.html'>period_boundaries</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># the 1st day of the current financial year</span>
-<span class='fu'>period_boundaries</span>()</div><div class='output co'>#&gt; [1] "2018-07-01"</div><div class='input'>
-<span class='co'># the last day of the current financial year</span>
-<span class='fu'>period_boundaries</span>(<span class='kw'>boundary</span> <span class='kw'>=</span> <span class='st'>"last day"</span>)</div><div class='output co'>#&gt; [1] "2019-06-30"</div><div class='input'>
-<span class='co'># the last day of the last calendar year</span>
-<span class='fu'>period_boundaries</span>(<span class='kw'>offset_period</span> <span class='kw'>=</span> -<span class='fl'>1</span>, <span class='kw'>bus_period</span> <span class='kw'>=</span> <span class='st'>"CY"</span>, <span class='kw'>boundary</span> <span class='kw'>=</span> <span class='st'>"last day"</span>)</div><div class='output co'>#&gt; [1] "2018-12-31"</div><div class='input'>
-<span class='co'># the last day of month 14 months from now</span>
-<span class='fu'>period_boundaries</span>(<span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>14</span>, <span class='kw'>offset_type</span> <span class='kw'>=</span> <span class='st'>"month"</span>,
-                  <span class='kw'>bus_period</span> <span class='kw'>=</span> <span class='st'>"M"</span>, <span class='kw'>boundary</span> <span class='kw'>=</span> <span class='st'>"last day"</span>)</div><div class='output co'>#&gt; [1] "2020-03-31"</div><div class='input'>
-<span class='co'># The first day of financial years for dates 3 months before the given dates</span>
-<span class='fu'>period_boundaries</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"02/27/1992"</span>, <span class='st'>"09/28/2022"</span>), <span class='st'>"%m/%d/%Y"</span>),
-                  <span class='kw'>offset_period</span> <span class='kw'>=</span> -<span class='fl'>3</span>, <span class='kw'>offset_type</span> <span class='kw'>=</span> <span class='st'>"month"</span>,
-                  <span class='kw'>bus_period</span> <span class='kw'>=</span> <span class='st'>"FY"</span>, <span class='kw'>boundary</span> <span class='kw'>=</span> <span class='st'>"1st day"</span>)</div><div class='output co'>#&gt; [1] "1991-07-01" "2021-07-01"</div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_fy</span>() <span class='co'>## return the current financial year as integer</span></div><div class='output co'>#&gt; [1] 2019</div><div class='input'>
+<span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"01-01-2018"</span>, <span class='st'>"15-12-2017"</span>), <span class='st'>"%d-%m-%Y"</span>)
+<span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>[<span class='fl'>1</span>])</div><div class='output co'>#&gt; [1] 2018</div><div class='input'><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>)</div><div class='output co'>#&gt; [1] 2018 2018</div><div class='input'>
+<span class='fu'>get_fy</span>(<span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>1</span>) <span class='co'>## return the next financial year as integer</span></div><div class='output co'>#&gt; [1] 2020</div><div class='input'><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>[<span class='fl'>1</span>], <span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 2019</div><div class='input'><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>, <span class='kw'>offset_period</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 2019 2019</div><div class='input'>
+<span class='fu'>get_fy</span>(<span class='kw'>offset_period</span><span class='kw'>=</span>-<span class='fl'>1</span>) <span class='co'>## return the previous financial year as integer</span></div><div class='output co'>#&gt; [1] 2018</div><div class='input'><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>[<span class='fl'>1</span>], <span class='kw'>offset_period</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 2017</div><div class='input'><span class='fu'>get_fy</span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='no'>dt</span>, <span class='kw'>offset_period</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 2017 2017</div><div class='input'>
+
+</div><span class='co'># NOT RUN {</span>
+<span class='fu'>get_fy</span>(<span class='st'>"a"</span>) <span class='co'>## will fail because dates are expected.</span>
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
