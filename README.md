@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/mickmioduszewski/busdater/branch/master/graph/badge.svg)](https://codecov.io/gh/mickmioduszewski/busdater)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/busdater)](https://cran.r-project.org/package=busdater)
 [![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/busdater)](https://cran.r-project.org/package=busdater)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/busdater)](https://cran.r-project.org/package=busdater)
 
 
 
