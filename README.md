@@ -5,6 +5,7 @@
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/busdater)](https://cran.r-project.org/package=busdater)
 [![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/busdater)](https://cran.r-project.org/package=busdater)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/busdater)](https://cran.r-project.org/package=busdater)
+![](https://img.shields.io/github/languages/top/mickmioduszewski/busdater.svg)
 
 
 
