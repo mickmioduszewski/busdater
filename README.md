@@ -2,6 +2,9 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 [![Build Status](https://travis-ci.org/mickmioduszewski/busdater.svg?branch=master)](https://travis-ci.org/mickmioduszewski/busdater)
 [![codecov](https://codecov.io/gh/mickmioduszewski/busdater/branch/master/graph/badge.svg)](https://codecov.io/gh/mickmioduszewski/busdater)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/busdater)](https://cran.r-project.org/package=busdater)
+[![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/busdater)](https://cran.r-project.org/package=busdater)
+
 
 
 # busdater
