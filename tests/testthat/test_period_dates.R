@@ -4,12 +4,13 @@ library(lubridate)
 test_that("FY is correct", {
   options(busdaterFYstart = NULL)
   dt <- ymd("2018-01-01", "2018-01-02", "2018-06-30", "2018-07-01",
-            "2018-07-02","2018-07-03")
-  expect_equal(FY(date = dt, offset_period = 0), c(2018, 2018, 2018, 2019, 2019, 2019))
+            "2018-07-02", "2018-07-03")
+  expect_equal(FY(date = dt, offset_period = 0), c(2018, 2018, 2018,
+                                                   2019, 2019, 2019))
   expect_equal(FY(date = dt, offset_period = -1), c(2017, 2017, 2017,
                                               2018, 2018, 2018))
 
-  expect_warning(FY(date = dt, offset_period = c(1,2)),
+  expect_warning(FY(date = dt, offset_period = c(1, 2)),
                  paste("package busdater:",
                        "offset_period should be an integer vector of length 1,",
                        "using the first element"))
@@ -17,17 +18,18 @@ test_that("FY is correct", {
                paste("package busdater:",
                      "offset_period must be an integer vector"))
   options(busdaterFYstart = "01-01")
-  expect_equal(FY(date = dt, offset_period = 0), c(2018, 2018, 2018, 2018, 2018, 2018))
+  expect_equal(FY(date = dt, offset_period = 0), c(2018, 2018, 2018, 2018,
+                                                   2018, 2018))
   expect_equal(FY(date = dt, offset_period = -1), c(2017, 2017, 2017,
                                                     2017, 2017, 2017))
   options(busdaterFYstart = "d-01")
   expect_error(FY(date = dt),
                paste("package busdater:",
-                     "optFYstart is in the wrong format"))
-  options(busdaterFYstart = c("01-01","02-01"))
+                     "opt_fy_start is in the wrong format"))
+  options(busdaterFYstart = c("01-01", "02-01"))
   expect_error(FY(date = dt),
                paste("package busdater:",
-                     "optFYstart is in the wrong format"))
+                     "opt_fy_start is in the wrong format"))
   options(busdaterFYstart = NULL)
 })
 

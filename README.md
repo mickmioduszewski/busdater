@@ -17,8 +17,8 @@ busdater aims to make it easier, by providing functionality,
 to get financial year, calendar year and month calculations.
 It returns start and end of the business periods.
 
-Jurisditions and organisations observe different start and end of financial year.
-optFYstart parameter is string in the format of "MM-DD" representing the start
+Jurisdictions and organisations observe different start and end of financial year.
+opt_fy_start parameter is string in the format of "MM-DD" representing the start
 of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July. The default is taken from options and is "07-01" if not present.
 
 This package caters for financial years that have a fixed start date.

@@ -5,7 +5,7 @@
 \title{Get a financial year.}
 \usage{
 FY(date = Sys.Date(), offset_period = 0,
-  optFYstart = getOption("busdaterFYstart", default = "07-01"))
+  opt_fy_start = getOption("busdaterFYstart", default = "07-01"))
 }
 \arguments{
 \item{date}{A date vector for which financial year is required.
@@ -17,7 +17,7 @@ e.g. in the case of \code{FY}, -1 for previous year, 1 for next year. More
 generally in \code{page_boundaries} function it is a number of periods of
 a specified period type}
 
-\item{optFYstart}{A string in the format of "MM-DD" representing the start
+\item{opt_fy_start}{A string in the format of "MM-DD" representing the start
 of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
 This package caters for financial years that have a fixed start date.
 It does not cater for moving dates e.g. last Friday of September.}

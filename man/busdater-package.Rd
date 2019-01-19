@@ -17,7 +17,7 @@ to get financial year, calendar year and month calculations.
 It returns start and end of the business periods.
 
 \describe{
-  \item{\code{\link{FY}}}{Get financial year, possibly with an offset priod}
+  \item{\code{\link{FY}}}{Get financial year, possibly with an offset period}
   \item{\code{\link{period_boundaries}}}{Get date's business period boundary.}
 }
 }

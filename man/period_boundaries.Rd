@@ -6,7 +6,7 @@
 \usage{
 period_boundaries(date = Sys.Date(), offset_period = 0,
   offset_type = "year", bus_period = "FY", boundary = "1st day",
-  optFYstart = getOption("busdaterFYstart", default = "07-01"))
+  opt_fy_start = getOption("busdaterFYstart", default = "07-01"))
 }
 \arguments{
 \item{date}{A date vector for which financial year is required.
@@ -26,7 +26,7 @@ a specified period type}
 \item{boundary}{Either \code{"1st day"} for the first day of the period or
 \code{"last day"} for the end of the period.}
 
-\item{optFYstart}{A string in the format of "MM-DD" representing the start
+\item{opt_fy_start}{A string in the format of "MM-DD" representing the start
 of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
 This package caters for financial years that have a fixed start date.
 It does not cater for moving dates e.g. last Friday of September.}
@@ -53,7 +53,7 @@ period_boundaries(offset_period = -1, bus_period = "CY", boundary = "last day")
 period_boundaries(offset_period = 14, offset_type = "month",
                   bus_period = "M", boundary = "last day")
 
-# The first day of finacial years for dates 3 months before the given dates
+# The first day of financial years for dates 3 months before the given dates
 period_boundaries(as.Date(c("02/27/1992", "09/28/2022"), "\%m/\%d/\%Y"),
                   offset_period = -3, offset_type = "month",
                   bus_period = "FY", boundary = "1st day")

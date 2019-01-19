@@ -5,7 +5,7 @@
 #' It returns start and end of the business periods.
 #'
 #' \describe{
-#'   \item{\code{\link{FY}}}{Get financial year, possibly with an offset priod}
+#'   \item{\code{\link{FY}}}{Get financial year, possibly with an offset period}
 #'   \item{\code{\link{period_boundaries}}}{Get date's business period boundary.}
 #' }
 #' @keywords internal
@@ -26,7 +26,7 @@
 #' e.g. in the case of \code{FY}, -1 for previous year, 1 for next year. More
 #' generally in \code{page_boundaries} function it is a number of periods of
 #' a specified period type
-#' @param optFYstart A string in the format of "MM-DD" representing the start
+#' @param opt_fy_start A string in the format of "MM-DD" representing the start
 #' of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
 #' This package caters for financial years that have a fixed start date.
 #' It does not cater for moving dates e.g. last Friday of September.
@@ -58,14 +58,15 @@
 #' @importFrom lubridate year
 FY <- function(date = Sys.Date(),
                offset_period = 0,
-               optFYstart = getOption("busdaterFYstart", default = "07-01")) {
-  tmp <- check_param_offset_period(offset_period)
-  x <- check_param_optFYstart(optFYstart)
+               opt_fy_start = getOption("busdaterFYstart", default = "07-01")) {
+  check_param_offset_period(offset_period)
+  x <- check_param_opt_fy_start(opt_fy_start)
   y <- year(date)
-  optFYstart_dt <- ymd(paste0(y, "-", x$MM, "-", x$DD))
+  opt_fy_start_dt <- ymd(paste0(y, "-", x$MM, "-", x$DD))
   n <- length(date)
-  ret <- ifelse(rep.int(x$DD,n) == 1 & rep.int(x$MM,n) == 1, y + offset_period,
-                ifelse(date < optFYstart_dt, y + offset_period,
+  ret <- ifelse(rep.int(x$DD, n) == 1 & rep.int(x$MM, n) == 1,
+                y + offset_period,
+                ifelse(date < opt_fy_start_dt, y + offset_period,
                        y + 1 + offset_period))
   as.integer(ret)
 }
@@ -95,7 +96,7 @@ FY <- function(date = Sys.Date(),
 #' period_boundaries(offset_period = 14, offset_type = "month",
 #'                   bus_period = "M", boundary = "last day")
 #'
-#' # The first day of finacial years for dates 3 months before the given dates
+#' # The first day of financial years for dates 3 months before the given dates
 #' period_boundaries(as.Date(c("02/27/1992", "09/28/2022"), "%m/%d/%Y"),
 #'                   offset_period = -3, offset_type = "month",
 #'                   bus_period = "FY", boundary = "1st day")
@@ -113,7 +114,7 @@ period_boundaries <- function(date = Sys.Date(),
                               offset_type = "year",
                               bus_period = "FY",
                               boundary = "1st day",
-                              optFYstart = getOption("busdaterFYstart",
+                              opt_fy_start = getOption("busdaterFYstart",
                                                      default = "07-01")) {
   offset_period <- check_param_offset_period(offset_period)
   offset_type <- check_param_offset_type(offset_type)
@@ -125,21 +126,24 @@ period_boundaries <- function(date = Sys.Date(),
   rt <- NULL
 
   if (bus_period == "FY") {
-    fy <- FY(dt_off, optFYstart = optFYstart)
+    fy <- FY(dt_off, opt_fy_start = opt_fy_start)
     if (boundary == "1st day") {
-      rt <- ymd(paste0(fy-1,optFYstart))
+      rt <- ymd(paste0(fy - 1, opt_fy_start))
     } else {
-      rt <- ymd(paste0(fy,optFYstart)) - 1}
+      rt <- ymd(paste0(fy, opt_fy_start)) - 1
+      }
   } else {
     if (bus_period == "CY") {
       unt <- "year"
     } else {
-        unt <- "month"}
+        unt <- "month"
+        }
     if (boundary == "1st day") {
 
       rt <- floor_date(dt_off, unit = unt)
     } else {
-      rt <- ceiling_date(dt_off, unit = unt) - 1}
+      rt <- ceiling_date(dt_off, unit = unt) - 1
+      }
   }
   return(rt)
 }
@@ -148,24 +152,24 @@ offset_dt <- function(date, offset_period, offset_type) {
   offset_period <- check_param_offset_period(offset_period)
   offset_type <- check_param_offset_type(offset_type)
 
-  off <- period(offset_period,offset_type)
+  off <- period(offset_period, offset_type)
   rt <- add_with_rollback(date, off)
   return(rt)
 }
 
-check_param_optFYstart <- function(x) {
-  optFYstartL <- strsplit(x, "-")
-  if (length(optFYstartL) != 1 || length(optFYstartL[[1]]) != 2) {
+check_param_opt_fy_start <- function(x) {
+  opt_fy_start_l <- strsplit(x, "-")
+  if (length(opt_fy_start_l) != 1 || length(opt_fy_start_l[[1]]) != 2) {
     stop(paste("package busdater:",
-               "optFYstart is in the wrong format"))
+               "opt_fy_start is in the wrong format"))
   }
-  optFYstartMM <- suppressWarnings(as.integer(optFYstartL[[1]][1]))
-  optFYstartDD <- suppressWarnings(as.integer(optFYstartL[[1]][2]))
-  if (is.na(optFYstartMM) || is.na(optFYstartDD)) {
+  opt_fy_start_mm <- suppressWarnings(as.integer(opt_fy_start_l[[1]][1]))
+  opt_fy_start_dd <- suppressWarnings(as.integer(opt_fy_start_l[[1]][2]))
+  if (is.na(opt_fy_start_mm) || is.na(opt_fy_start_dd)) {
     stop(paste("package busdater:",
-               "optFYstart is in the wrong format"))
+               "opt_fy_start is in the wrong format"))
   }
-  list(DD = optFYstartDD, MM = optFYstartMM)
+  list(DD = opt_fy_start_dd, MM = opt_fy_start_mm)
 }
 
 check_param_offset_period <- function(offset_period) {
@@ -199,7 +203,7 @@ check_param_bus_period <- function(bus_period) {
                   "bus_period should be a character vector of length 1,",
                   "using the first element"))
   }
-  if (!(bus_period[1] %in% c('FY', 'CY', 'M'))) {
+  if (!(bus_period[1] %in% c("FY", "CY", "M"))) {
     stop(paste("package busdater:",
                "bus_period must be 'FY' or 'CY' or 'M'"))
   }
@@ -211,7 +215,7 @@ check_param_boundary <- function(boundary) {
                   "boundary should be a character vector of length 1,",
                   "using the first element"))
   }
-  if (!(boundary[1] %in% c('1st day', 'last day'))) {
+  if (!(boundary[1] %in% c("1st day", "last day"))) {
     stop(paste("package busdater:",
                "boundary must be '1st day' or 'last day'"))
   }
