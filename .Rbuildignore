@@ -3,4 +3,5 @@
 ^\.Rproj\.user$
 .travis.yml
 ^docs$
-^docs\*$
+^_pkgbld.R$
+
