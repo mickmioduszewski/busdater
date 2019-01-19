@@ -1,8 +1,11 @@
 # Checks 
 lintr::lint_package()
 devtools::spell_check()
-# Continuous integration on Travis, 3 R versions & includes codecov.io 
+# Continuous integration on Travis, 3 R versions & includes codecov.io
 
+# Code test coverage
+library(covr)
+report()
 
 
 
