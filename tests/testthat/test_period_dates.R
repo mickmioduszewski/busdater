@@ -1,4 +1,5 @@
 context("Business period dates")
+
 library(lubridate)
 test_that("FY is correct", {
   options(busdaterFYstart = NULL)
