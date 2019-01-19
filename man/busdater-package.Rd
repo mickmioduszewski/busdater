@@ -21,6 +21,15 @@ It returns start and end of the business periods.
   \item{\code{\link{period_boundaries}}}{Get date's business period boundary.}
 }
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://mickmioduszewski.github.io/busdater/}
+  \item \url{https://github.com/mickmioduszewski/busdater/}
+  \item Report bugs at \url{https://github.com/mickmioduszewski/busdater/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Mick Mioduszewski \email{mick@mioduszewski.net}
 

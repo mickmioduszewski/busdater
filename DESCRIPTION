@@ -13,6 +13,9 @@ Description: Get a current financial year, start of current
     month, End of current month, start of financial year and end of it.
     Allow for offset from the date.
 License: MIT + file LICENSE
+URL: https://mickmioduszewski.github.io/busdater/, 
+    https://github.com/mickmioduszewski/busdater/
+BugReports: https://github.com/mickmioduszewski/busdater/issues
 Imports:
     lubridate
 Suggests: 
