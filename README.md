@@ -3,8 +3,6 @@
 [![Build Status](https://travis-ci.org/mickmioduszewski/busdater.svg?branch=master)](https://travis-ci.org/mickmioduszewski/busdater)
 
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
-
 # busdater
 Business dates for R
 
