@@ -1,4 +1,6 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
+[![Build Status](https://travis-ci.org/mickmioduszewski/busdater.svg?branch=master)](https://travis-ci.org/mickmioduszewski/busdater)
 
 # busdater
 Business dates for R
