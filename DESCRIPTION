@@ -1,22 +1,27 @@
-Package: busdater
 Type: Package
+Package: busdater
 Title: Standard Date Calculations for Business
 Version: 0.1.1
-Authors@R: person("Mick", "Mioduszewski", email = "mick@mioduszewski.net",
-                  role = c("aut", "cre"))
-Description: Get a current financial year, start of current month, 
-    End of current month, start of financial year and end of it.
+Authors@R: 
+    person(given = "Mick",
+           family = "Mioduszewski",
+           role = c("aut", "cre"),
+           email = "mick@mioduszewski.net")
+Author: Mick Mioduszewski [aut, cre]
+Maintainer: Mick Mioduszewski <mick@mioduszewski.net>
+Description: Get a current financial year, start of current
+    month, End of current month, start of financial year and end of it.
     Allow for offset from the date.
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
 Imports:
     lubridate
 Suggests: 
-    testthat,
+    covr,
     knitr,
-    rmarkdown
-VignetteBuilder: knitr
+    rmarkdown,
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.1.1
-Author: Mick Mioduszewski [aut, cre]
-Maintainer: Mick Mioduszewski <mick@mioduszewski.net>
