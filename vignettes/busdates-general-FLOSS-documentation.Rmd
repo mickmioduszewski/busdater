@@ -31,5 +31,6 @@ Collaboration and contibution is welcome.
 * Installation follow usual package install practices e.g. install.packages("busdater")
 * All documentation will be in plain English but will not filter out technical terms
 * All functionality needs to have test coverage 
-* Developers will have Developer Certificate of Origin
+* Developers will use Developer Certificate of Origin
+* Repository owner has decision making rights on incorporating the changes
 
