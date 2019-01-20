@@ -16,7 +16,19 @@ knitr::opts_chunk$set(
 )
 library(busdater)
 ```
+# FLOSS
 
-This software is FLOSS and attempts to conform with Core 
-Infrastructure Integration
+This software is FLOSS, attempts to conform with Core 
+Infrastructure Integration, is hosted at https://mickmioduszewski.github.io/busdater/index.html and is licensed as MIT.
+
+Collaboration and contibution is welcome.
+
+
+# Standards
+
+* The software will follow CRAN standards, policy and good practice manuals.
+* Style will be checked with https://cran.r-project.org/web/packages/lintr/index.html, which in turn follows [Hadley Wickham's R Style Guide](http://r-pkgs.had.co.nz/style.html).
+* Installation follow usual package install practices e.g. install.packages("busdater")
+* All documentation will be in plain English but will not filter out technical terms
+* All functionality needs to have test coverage 
 

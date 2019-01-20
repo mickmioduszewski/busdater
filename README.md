@@ -7,6 +7,7 @@
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/busdater)](https://cran.r-project.org/package=busdater)
 ![](https://img.shields.io/github/languages/top/mickmioduszewski/busdater.svg)
 ![](https://img.shields.io/github/issues/mickmioduszewski/busdater.svg)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2468/badge)](https://bestpractices.coreinfrastructure.org/projects/2468)
 
 
 
