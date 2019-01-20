@@ -93,12 +93,18 @@
 <p>Working with business dates can be cumbersome and error prone. busdater aims to make it easier, by providing functionality, to get financial year, calendar year and month calculations. It returns start and end of the business periods.</p>
 <p>Jurisdictions and organisations observe different start and end of financial year. opt_fy_start parameter is string in the format of “MM-DD” representing the start of financial year, e.g. “01-01” for 1st of January or “07-01” for 1st of July. The default is taken from options and is “07-01” if not present.</p>
 <p>This package caters for financial years that have a fixed start date. It does not cater for moving dates e.g. last Friday of September.</p>
-<p>The package has 2 functions:</p>
+<p>The package has 4 functions (2 deprecated):</p>
 <ul>
 <li>
-<code>FY</code> to return the financial (fiscal) year as integers</li>
+<code>get_fy</code> to return the financial (fiscal) year as integers</li>
 <li>
-<code>period_boundaries</code> to return start and end of a month and start and end of financial years</li>
+<code>get_boundary</code> to return start and end of a month and start and end of financial years</li>
+<li>
+<code>FY</code> deprecated and same as <code>get_fy</code>
+</li>
+<li>
+<code>period_boundaries</code> deprecated and same as <code>get_boundary</code>
+</li>
 </ul>
 <p>Enjoy!</p>
 </div>
