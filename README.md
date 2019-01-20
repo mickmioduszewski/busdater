@@ -25,9 +25,11 @@ of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July. T
 This package caters for financial years that have a fixed start date.
 It does not cater for moving dates e.g. last Friday of September.
 
-The package has 2 functions:
+The package has 4 functions (2 deprecated):
 
-* `FY` to return the financial (fiscal) year as integers
-* `period_boundaries` to return start and end of a month and start and end of financial years
+* `get_fy` to return the financial (fiscal) year as integers
+* `get_boundary` to return start and end of a month and start and end of financial years
+* `FY` deprecated and same as `get_fy`
+* `period_boundaries` deprecated and same as `get_boundary`
 
 Enjoy!
