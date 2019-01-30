@@ -35,7 +35,8 @@ It does not cater for moving dates e.g. last Friday of September.}
 A vector of dates.
 }
 \description{
-The \code{period_boundaries} will shift the input \code{date} vector by
+The \code{period_boundaries} is a deprecated function. 
+It will shift the input \code{date} vector by
 a number of months and years i.e. \code{date + offset_period * offset_type}.
 It will handle the typical business date arithmetic.
 }

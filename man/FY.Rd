@@ -28,12 +28,12 @@ An integer vector containing the current financial year if offset
 in years.
 }
 \description{
-\code{FY()} returns the current financial year.
+\code{FY()} is a deprecated function. It returns the current financial year.
 It also returns financial year based on parameter dates, or financial year
 based on a parameter dates and offset_period in years.
 }
 \examples{
-FY() ## return the current financial year as integer
+FY() # deprecated function returns the current financial year as integer
 
 dt <- as.Date(c("01-01-2018", "15-12-2017"), "\%d-\%m-\%Y")
 FY(date = dt[1])
@@ -51,6 +51,8 @@ FY(date = dt, offset_period = -1)
 \dontrun{
 FY("a") ## will fail because dates are expected.
 }
+
+
 }
 \seealso{
 Other business date functions: \code{\link{get_boundary}},

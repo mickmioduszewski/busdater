@@ -12,9 +12,6 @@
 #' }
 #' @keywords internal
 "_PACKAGE"
-
-
-
 #' Get a financial year.
 #'
 #' \code{get_fy()} returns the current financial (fiscal) year.
@@ -56,6 +53,7 @@
 #' }
 #' @family business date functions
 #' @export
+#' @importFrom lubridate year
 get_fy <- function(date = Sys.Date(),
                offset_period = 0,
                opt_fy_start = getOption("busdaterFYstart", default = "07-01")) {
@@ -72,8 +70,8 @@ get_fy <- function(date = Sys.Date(),
 }
 
 #' Get a financial year (deprecated).
-#'
-#' \code{FY()} returns the current financial year.
+#' 
+#' \code{FY()} is a deprecated function. It returns the current financial year.
 #' It also returns financial year based on parameter dates, or financial year
 #' based on a parameter dates and offset_period in years.
 #'
@@ -91,8 +89,9 @@ get_fy <- function(date = Sys.Date(),
 #' @return An integer vector containing the current financial year if offset
 #' \code{offset_period} is 0, otherwise add the offset \code{offset_period}
 #' in years.
+#' 
 #' @examples
-#' FY() ## return the current financial year as integer
+#' FY() # deprecated function returns the current financial year as integer
 #'
 #' dt <- as.Date(c("01-01-2018", "15-12-2017"), "%d-%m-%Y")
 #' FY(date = dt[1])
@@ -110,13 +109,16 @@ get_fy <- function(date = Sys.Date(),
 #' \dontrun{
 #' FY("a") ## will fail because dates are expected.
 #' }
+#' 
+#' 
 #' @family business date functions
 #' @export
-#' @importFrom lubridate month
-#' @importFrom lubridate year
 FY <- function(date = Sys.Date(),
                offset_period = 0,
                optFYstart = getOption("busdaterFYstart", default = "07-01")) {
+  .Deprecated("new = get_fy",
+              package = "busdater",
+              msg = "FY deprecated, replaced by get_fy")
   get_fy(date = date,
      offset_period = offset_period,
      opt_fy_start = optFYstart)
@@ -201,7 +203,8 @@ get_boundary <- function(date = Sys.Date(),
 
 #' Get date's business period boundary (deprecated).
 #'
-#' The \code{period_boundaries} will shift the input \code{date} vector by
+#' The \code{period_boundaries} is a deprecated function. 
+#' It will shift the input \code{date} vector by
 #' a number of months and years i.e. \code{date + offset_period * offset_type}.
 #' It will handle the typical business date arithmetic.
 #' @inheritParams FY
@@ -245,6 +248,9 @@ period_boundaries <- function(date = Sys.Date(),
                      boundary = "1st day",
                      optFYstart = getOption("busdaterFYstart",
                                               default = "07-01")) {
+  .Deprecated("new = get_boundary",
+              package = "busdater",
+              msg = "period_boundaries deprecated, replaced by get_boundary")
   get_boundary(date = date,
                offset_period = offset_period,
                offset_type = offset_type,
