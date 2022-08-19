@@ -2,7 +2,7 @@ Type: Package
 Package: busdater
 Title: Standard Date Calculations for Business
 Version: 0.2.0
-Authors@R: 
+Authors@R:
     person(given = "Mick",
            family = "Mioduszewski",
            role = c("aut", "cre"),
@@ -13,18 +13,17 @@ Description: Get a current financial year, start of current
     month, End of current month, start of financial year and end of it.
     Allow for offset from the date.
 License: MIT + file LICENSE
-URL: https://mickmioduszewski.github.io/busdater/, 
+URL: https://mickmioduszewski.github.io/busdater/,
     https://github.com/mickmioduszewski/busdater/
 BugReports: https://github.com/mickmioduszewski/busdater/issues
 Imports:
     lubridate
-Suggests: 
+Suggests:
     covr,
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: 
+VignetteBuilder:
     knitr
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 6.1.1
