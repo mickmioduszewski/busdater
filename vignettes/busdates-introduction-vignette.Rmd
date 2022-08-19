@@ -71,7 +71,7 @@ get_fy(date = dt, offset_period = 1)
 
 Return the previous financial year as integer
 ```{r}
-get_fy(offset_period=-1) ## return the previous financial year as integer
+get_fy(offset_period = -1) ## return the previous financial year as integer
 get_fy(date = dt[1], offset_period = -1)
 get_fy(date = dt, offset_period = -1)
 ```

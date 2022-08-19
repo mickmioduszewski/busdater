@@ -19,9 +19,9 @@ Date must be POSIXct or POSIXlt or Date objects.}
 
 \item{offset_period}{A positive or negative number  coercible to
 integer to shift the year by,
-e.g. in the case of \code{get_fy}, -1 for previous year, 1 for next year. More
-generally in \code{page_boundaries} function it is a number of periods of
-a specified period type}
+e.g. in the case of \code{get_fy}, -1 for previous year, 1 for next year.
+More generally in \code{page_boundaries} function it is a number of periods
+of a specified period type}
 
 \item{offset_type}{It is either \code{"month"} or \code{"year"}}
 
@@ -32,7 +32,8 @@ a specified period type}
 \code{"last day"} for the end of the period.}
 
 \item{opt_fy_start}{A string in the format of "MM-DD" representing the start
-of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
+of financial year, e.g. "01-01" for 1st of January or "07-01"
+for 1st of July.
 This package caters for financial years that have a fixed start date.
 It does not cater for moving dates e.g. last Friday of September.}
 }

@@ -5,10 +5,12 @@
 #' It returns start and end of the business periods.
 #'
 #' \describe{
-#'   \item{\code{\link{get_fy}}}{Get financial year, possibly with an offset period}
+#'   \item{\code{\link{get_fy}}}{Get financial year,
+#'   possibly with an offset period}
 #'   \item{\code{\link{FY}}}{Deprecated in favour of get_fy()}
 #'   \item{\code{\link{get_boundary}}}{Get date's business period boundary.}
-#'   \item{\code{\link{period_boundaries}}}{Deprecated in favour of get_boundary()}
+#'   \item{\code{\link{period_boundaries}}}{Deprecated in favour
+#'   of get_boundary()}
 #' }
 #' @keywords internal
 "_PACKAGE"
@@ -22,11 +24,12 @@
 #' Date must be POSIXct or POSIXlt or Date objects.
 #' @param offset_period A positive or negative number  coercible to
 #' integer to shift the year by,
-#' e.g. in the case of \code{get_fy}, -1 for previous year, 1 for next year. More
-#' generally in \code{page_boundaries} function it is a number of periods of
-#' a specified period type
+#' e.g. in the case of \code{get_fy}, -1 for previous year, 1 for next year.
+#' More generally in \code{page_boundaries} function it is a number of periods
+#' of a specified period type
 #' @param opt_fy_start A string in the format of "MM-DD" representing the start
-#' of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
+#' of financial year, e.g. "01-01" for 1st of January or "07-01"
+#' for 1st of July.
 #' This package caters for financial years that have a fixed start date.
 #' It does not cater for moving dates e.g. last Friday of September.
 #' @return An integer vector containing the current financial year if offset
@@ -70,7 +73,7 @@ get_fy <- function(date = Sys.Date(),
 }
 
 #' Get a financial year (deprecated).
-#' 
+#'
 #' \code{FY()} is a deprecated function. It returns the current financial year.
 #' It also returns financial year based on parameter dates, or financial year
 #' based on a parameter dates and offset_period in years.
@@ -83,13 +86,14 @@ get_fy <- function(date = Sys.Date(),
 #' generally in \code{page_boundaries} function it is a number of periods of
 #' a specified period type
 #' @param optFYstart A string in the format of "MM-DD" representing the start
-#' of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
+#' of financial year, e.g. "01-01" for 1st of January or "07-01"
+#' for 1st of July.
 #' This package caters for financial years that have a fixed start date.
 #' It does not cater for moving dates e.g. last Friday of September.
 #' @return An integer vector containing the current financial year if offset
 #' \code{offset_period} is 0, otherwise add the offset \code{offset_period}
 #' in years.
-#' 
+#'
 #' @examples
 #' FY() # deprecated function returns the current financial year as integer
 #'
@@ -109,8 +113,8 @@ get_fy <- function(date = Sys.Date(),
 #' \dontrun{
 #' FY("a") ## will fail because dates are expected.
 #' }
-#' 
-#' 
+#'
+#'
 #' @family business date functions
 #' @export
 FY <- function(date = Sys.Date(),
@@ -203,7 +207,7 @@ get_boundary <- function(date = Sys.Date(),
 
 #' Get date's business period boundary (deprecated).
 #'
-#' The \code{period_boundaries} is a deprecated function. 
+#' The \code{period_boundaries} is a deprecated function.
 #' It will shift the input \code{date} vector by
 #' a number of months and years i.e. \code{date + offset_period * offset_type}.
 #' It will handle the typical business date arithmetic.
@@ -222,7 +226,8 @@ get_boundary <- function(date = Sys.Date(),
 #' period_boundaries(boundary = "last day")
 #'
 #' # the last day of the last calendar year
-#' period_boundaries(offset_period = -1, bus_period = "CY", boundary = "last day")
+#' period_boundaries(offset_period = -1, bus_period = "CY",
+#'                   boundary = "last day")
 #'
 #' # the last day of month 14 months from now
 #' period_boundaries(offset_period = 14, offset_type = "month",

@@ -32,7 +32,8 @@ a specified period type}
 \code{"last day"} for the end of the period.}
 
 \item{optFYstart}{A string in the format of "MM-DD" representing the start
-of financial year, e.g. "01-01" for 1st of January or "07-01" for 1st of July.
+of financial year, e.g. "01-01" for 1st of January or "07-01"
+for 1st of July.
 This package caters for financial years that have a fixed start date.
 It does not cater for moving dates e.g. last Friday of September.}
 }
@@ -40,7 +41,7 @@ It does not cater for moving dates e.g. last Friday of September.}
 A vector of dates.
 }
 \description{
-The \code{period_boundaries} is a deprecated function. 
+The \code{period_boundaries} is a deprecated function.
 It will shift the input \code{date} vector by
 a number of months and years i.e. \code{date + offset_period * offset_type}.
 It will handle the typical business date arithmetic.
@@ -53,7 +54,8 @@ period_boundaries()
 period_boundaries(boundary = "last day")
 
 # the last day of the last calendar year
-period_boundaries(offset_period = -1, bus_period = "CY", boundary = "last day")
+period_boundaries(offset_period = -1, bus_period = "CY",
+                  boundary = "last day")
 
 # the last day of month 14 months from now
 period_boundaries(offset_period = 14, offset_type = "month",
