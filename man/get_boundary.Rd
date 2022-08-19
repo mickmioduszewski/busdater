@@ -4,9 +4,14 @@
 \alias{get_boundary}
 \title{Get date's business period boundary.}
 \usage{
-get_boundary(date = Sys.Date(), offset_period = 0,
-  offset_type = "year", bus_period = "FY", boundary = "1st day",
-  opt_fy_start = getOption("busdaterFYstart", default = "07-01"))
+get_boundary(
+  date = Sys.Date(),
+  offset_period = 0,
+  offset_type = "year",
+  bus_period = "FY",
+  boundary = "1st day",
+  opt_fy_start = getOption("busdaterFYstart", default = "07-01")
+)
 }
 \arguments{
 \item{date}{A date vector for which financial year is required.
@@ -60,7 +65,9 @@ get_boundary(as.Date(c("02/27/1992", "09/28/2022"), "\%m/\%d/\%Y"),
 
 }
 \seealso{
-Other business date functions: \code{\link{FY}},
-  \code{\link{get_fy}}, \code{\link{period_boundaries}}
+Other business date functions: 
+\code{\link{FY}()},
+\code{\link{get_fy}()},
+\code{\link{period_boundaries}()}
 }
 \concept{business date functions}

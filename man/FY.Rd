@@ -4,8 +4,11 @@
 \alias{FY}
 \title{Get a financial year (deprecated).}
 \usage{
-FY(date = Sys.Date(), offset_period = 0,
-  optFYstart = getOption("busdaterFYstart", default = "07-01"))
+FY(
+  date = Sys.Date(),
+  offset_period = 0,
+  optFYstart = getOption("busdaterFYstart", default = "07-01")
+)
 }
 \arguments{
 \item{date}{A date vector for which financial year is required.
@@ -55,7 +58,9 @@ FY("a") ## will fail because dates are expected.
 
 }
 \seealso{
-Other business date functions: \code{\link{get_boundary}},
-  \code{\link{get_fy}}, \code{\link{period_boundaries}}
+Other business date functions: 
+\code{\link{get_boundary}()},
+\code{\link{get_fy}()},
+\code{\link{period_boundaries}()}
 }
 \concept{business date functions}
