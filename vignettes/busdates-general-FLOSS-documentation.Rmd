@@ -18,7 +18,7 @@ library(busdater)
 ```
 # FLOSS
 
-This software is FLOSS, attempts to conform with Core 
+This software is FLOSS, attempts to conform with Core
 Infrastructure Integration, is hosted at https://mickmioduszewski.github.io/busdater/index.html and is licensed as MIT.
 
 Collaboration and contibution is welcome.
@@ -27,10 +27,9 @@ Collaboration and contibution is welcome.
 # Standards
 
 * The software will follow CRAN standards, policy and good practice manuals.
-* Style will be checked with hhttps://CRAN.R-project.org/package=lintr, which in turn follows [Hadley Wickham's R Style Guide](http://r-pkgs.had.co.nz/style.html).
+* Style will be checked with hhttps://CRAN.R-project.org/package=lintr, which in turn follows [The tidyverse style guide](https://style.tidyverse.org/).
 * Installation follow usual package install practices e.g. install.packages("busdater")
 * All documentation will be in plain English but will not filter out technical terms
-* All functionality needs to have test coverage 
+* All functionality needs to have test coverage
 * Developers will use Developer Certificate of Origin
 * Repository owner has decision making rights on incorporating the changes
-
